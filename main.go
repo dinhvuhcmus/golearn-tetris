@@ -21,5 +21,5 @@ func main() {
 	game.Start()
 
 	termbox.Close()
-	fmt.Println("Bye!")
+	fmt.Println("Thank you for your time. Good bye!")
 }
