@@ -64,9 +64,6 @@ func drawDigitAsAscii(x, y, digit int) {
 	}
 }
 
-/*
-// See http://en.wikipedia.org/wiki/Box-drawing_character for unicode characters.
-*/
 func drawStaticBoardParts() {
 	// Make the whole board area the background color.
 	for x := 0; x < totalWidth+4; x++ {
@@ -112,13 +109,12 @@ func drawStaticBoardParts() {
 	printBorderCharacter((width*2)+2, headerHeight+height+2, '┹')
 	printBorderCharacter(totalWidth+2, headerHeight+height+2, '┤')
 
-	// Print the header logo
-	header := []string{"",
-		"   ____         _____    _        _     ",
-		"  / ___| ___   |_   _|__| |_ _ __(_)___ ",
-		" | |  _ / _ \\    | |/ _ \\ __| '__| / __|",
-		" | |_| | (_) |   | |  __/ |_| |  | \\__ \\",
-		"  \\____|\\___/    |_|\\___|\\__|_|  |_|___/",
+	// // Print the header logo
+	header := []string{
+		"",
+		"",
+		"",
+		"               GAME TETRIS",
 	}
 	for i, line := range header {
 		printString(2, i, line)
@@ -131,12 +127,13 @@ func drawStaticBoardParts() {
 	printString((width*2)+10, headerHeight+previewHeight+4, "SCORE")
 
 	// Print instructions below the game board.
-	instructions := []string{"Controls:",
+	instructions := []string{
+		"Controls:",
 		"",
-		"Move left       left arrow or 'h'",
-		"Move right      right arrow or 'l'",
-		"Move down       down arrow or 'j'",
-		"Rotate piece    up arrow or 'k'",
+		"Move left       left arrow",
+		"Move right      right arrow",
+		"Move down       down arrow",
+		"Rotate piece    up arrow",
 		"Quick drop      space",
 		"Pause/Resume    'p'",
 		"Quit            ctrl-c or 'q'",

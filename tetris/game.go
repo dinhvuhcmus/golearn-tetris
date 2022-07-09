@@ -204,14 +204,6 @@ func waitForUserEvent() GameEvent {
 				return Pause
 			case 'q':
 				return Quit
-			case 'h':
-				return MoveLeft
-			case 'k':
-				return Rotate
-			case 'l':
-				return MoveRight
-			case 'j':
-				return MoveDown
 			}
 		}
 	case termbox.EventResize:
@@ -252,8 +244,8 @@ func (game *Game) anchor() {
 		// Get rid of the rows
 		game.board.clearRows()
 
-		// Scoring -- 1 row -> 100, 2 rows -> 200, ... 4 rows -> 800
-		points := 100 * math.Pow(2, float64(len(rowsCleared)-1))
+		// Scoring -- 1 row -> 10, 2 rows -> 20, ...
+		points := 10 * math.Pow(2, float64(len(rowsCleared)-1))
 		game.score += int(points)
 
 		game.startTicker()

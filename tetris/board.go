@@ -45,6 +45,7 @@ func (board *Board) moveIfPossible(translation Vector) bool {
 	return true
 }
 
+// Merge the blocks of the current piece into the game board and remove the current piece.
 func (board *Board) mergeCurrentPiece() {
 	for _, point := range board.currentPiece.instance() {
 		board.cells[point.plus(board.currentPosition)] = board.currentPiece.color
