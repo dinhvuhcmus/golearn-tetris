@@ -179,7 +179,7 @@ func waitForTick(ticker *time.Ticker) GameEvent {
 
 func waitForUserEvent() GameEvent {
 	switch event := termbox.PollEvent(); event.Type {
-	// Movement: arrow keys or vim controls (h, j, k, l)
+	// Movement: arrow keys
 	// Pause: 'p'
 	// Exit: 'q' or ctrl-c.
 	case termbox.EventKey:
